@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fffaf4;
+  --panel: rgba(255, 255, 255, 0.86);
+  --panel-strong: rgba(255, 255, 255, 0.96);
+  --border: rgba(251, 146, 60, 0.18);
+  --text-soft: #7c5f46;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at top left, rgba(251, 146, 60, 0.22), transparent 32%),
+    radial-gradient(circle at top right, rgba(234, 88, 12, 0.14), transparent 28%),
+    linear-gradient(180deg, #fffaf4 0%, #fff8ee 42%, #fffdfb 100%);
+}
+
+@layer base {
+  section[id] {
+    scroll-margin-top: 88px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: var(--panel);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+  }
+
+  .section-card {
+    @apply rounded-[28px] border border-orange-100/70 bg-white/90 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow;
+  }
+
+  .stat-card {
+    @apply rounded-[26px] border border-orange-100 bg-gradient-to-br from-white to-orange-50/70 p-5 shadow-card;
+  }
+
+  .fire-chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-orange-200/80 bg-white/85 px-4 py-2 text-sm font-medium text-amber-900 shadow-sm backdrop-blur;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
