@@ -111,11 +111,11 @@ export function ContactForm() {
       </label>
 
       <div className="rounded-2xl bg-orange-50 px-4 py-3 text-sm leading-7 text-slate-600">
-        点击按钮后会打开邮件客户端。上线前请把收件邮箱
+        点击按钮后会打开邮件客户端。你也可以直接写信到
         <span className="mx-1 rounded bg-white px-2 py-1 font-medium text-slate-900">
           {CONTACT_EMAIL}
         </span>
-        替换为真实地址。
+        与我们联系。
       </div>
 
       <button
