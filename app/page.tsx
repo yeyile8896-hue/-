@@ -80,7 +80,7 @@ const participationWays = [
   },
   {
     icon: Users,
-    title: "成为同工志愿者",
+    title: "成为同工",
     description: "参与接待、行政、内容策划、敬拜或陪伴服事，一起承担平台建设。"
   },
   {
