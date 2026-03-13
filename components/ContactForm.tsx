@@ -7,7 +7,7 @@ import { CONTACT_EMAIL } from "@/lib/site";
 
 const interestOptions = [
   "报名参加活动",
-  "成为同工志愿者",
+  "成为同工",
   "成为代祷伙伴",
   "支持奉献",
   "其他咨询"
@@ -80,7 +80,7 @@ export function ContactForm() {
           <input
             className="w-full rounded-2xl border border-orange-100 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-200"
             onChange={(event) => handleChange("country", event.target.value)}
-            placeholder="例如：德国 / 法国 / 波兰"
+            placeholder="例如：塞尔维亚 / 罗马尼亚"
             required
             value={form.country}
           />
