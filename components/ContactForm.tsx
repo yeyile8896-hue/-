@@ -15,6 +15,7 @@ const interestOptions = [
 
 type FormState = {
   name: string;
+  country: string;
   contact: string;
   interest: string;
   message: string;
@@ -22,6 +23,7 @@ type FormState = {
 
 const initialState: FormState = {
   name: "",
+  country: "",
   contact: "",
   interest: interestOptions[0],
   message: ""
@@ -38,6 +40,7 @@ export function ContactForm() {
       "我想进一步了解心火欧青。",
       "",
       `姓名：${form.name || "-"}`,
+      `来自国家：${form.country || "-"}`,
       `联系方式：${form.contact || "-"}`,
       `参与方式：${form.interest || "-"}`,
       "留言：",
@@ -47,7 +50,7 @@ export function ContactForm() {
     ].join("\n");
 
     return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [form.contact, form.interest, form.message, form.name]);
+  }, [form.contact, form.country, form.interest, form.message, form.name]);
 
   function handleChange<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((current) => ({ ...current, [key]: value }));
@@ -60,7 +63,7 @@ export function ContactForm() {
 
   return (
     <form className="section-card space-y-5" onSubmit={handleSubmit}>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-3">
         <label className="space-y-2">
           <span className="text-sm font-medium text-slate-700">姓名</span>
           <input
@@ -73,11 +76,22 @@ export function ContactForm() {
         </label>
 
         <label className="space-y-2">
+          <span className="text-sm font-medium text-slate-700">来自哪个国家</span>
+          <input
+            className="w-full rounded-2xl border border-orange-100 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-200"
+            onChange={(event) => handleChange("country", event.target.value)}
+            placeholder="例如：德国 / 法国 / 波兰"
+            required
+            value={form.country}
+          />
+        </label>
+
+        <label className="space-y-2">
           <span className="text-sm font-medium text-slate-700">联系方式</span>
           <input
             className="w-full rounded-2xl border border-orange-100 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-200"
             onChange={(event) => handleChange("contact", event.target.value)}
-            placeholder="邮箱 / 微信 / Telegram / 手机"
+            placeholder="邮箱 / 微信 / 手机"
             required
             value={form.contact}
           />
