@@ -3,8 +3,7 @@
 import type { FormEvent } from "react";
 import { useMemo, useState } from "react";
 import { Mail } from "lucide-react";
-
-const CONTACT_EMAIL = "yeyile8896@gmail.com";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 const interestOptions = [
   "报名参加活动",

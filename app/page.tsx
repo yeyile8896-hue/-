@@ -6,6 +6,7 @@ import {
   GraduationCap,
   HandHeart,
   HeartHandshake,
+  Instagram,
   Mail,
   Monitor,
   Sparkles,
@@ -18,6 +19,7 @@ import { Container } from "@/components/Container";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Navbar, type NavItem } from "@/components/Navbar";
 import { SectionHeading } from "@/components/SectionHeading";
+import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/site";
 
 const navItems: NavItem[] = [
   { label: "关于", href: "#about" },
@@ -387,34 +389,39 @@ export default function Home() {
 
               <div className="section-card space-y-6">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
-                    Contact
-                  </p>
+                  <p className="text-sm font-semibold tracking-[0.24em] text-amber-700">联系方式</p>
                   <h3 className="mt-3 font-display text-2xl font-semibold text-slate-950">
                     保持连接
                   </h3>
                 </div>
 
                 <div className="rounded-3xl bg-orange-50 p-5">
-                  <p className="text-sm text-amber-700">邮箱设置</p>
+                  <p className="text-sm text-amber-700">邮箱联系</p>
                   <p className="mt-2 text-base leading-7 text-slate-700">
-                    当前表单使用占位收件邮箱，请在
-                    <span className="mx-1 rounded bg-white px-2 py-1 text-sm font-medium text-slate-900">
-                      components/ContactForm.tsx
-                    </span>
-                    中替换为真实团队邮箱。
+                    填写左侧表单后会自动打开邮件客户端；如果你想直接联系，也可以发送邮件至
                   </p>
+                  <a
+                    className="mt-3 inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-orange-100"
+                    href={`mailto:${CONTACT_EMAIL}`}
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
                 </div>
 
                 <div className="space-y-3">
                   <div className="rounded-2xl border border-orange-100 bg-white p-4">
-                    <p className="font-semibold text-slate-900">社媒占位符 TODO</p>
+                    <p className="font-semibold text-slate-900">社交媒体</p>
+                    <a
+                      className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-orange-700 transition hover:text-orange-800"
+                      href={INSTAGRAM_URL}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <Instagram className="h-4 w-4" />
+                      Instagram：{INSTAGRAM_HANDLE}
+                    </a>
                     <p className="mt-2 text-sm leading-7 text-slate-600">
-                      Instagram：TODO
-                      <br />
-                      Telegram / WhatsApp 社群：TODO
-                      <br />
-                      YouTube / 微信公众号：TODO
+                      欢迎先在 Instagram 关注我们，最新动态会优先更新在这里。
                     </p>
                   </div>
                   <div className="rounded-2xl border border-orange-100 bg-white p-4">
