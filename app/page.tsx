@@ -264,9 +264,9 @@ export default function Home() {
         <section className="py-12 sm:py-16" id="vision">
           <Container>
             <SectionHeading
-              eyebrow="异象与使命"
-              title="让青年在真理中扎根，在欧洲各地活出使命"
-              description="我们盼望不只是聚集活动参与者，而是建立一个能持续影响城市与国家的青年属灵网络。"
+              eyebrow="异象、使命、目标与策略"
+              title="让青年在真理中扎根，并以清晰目标稳健成长"
+              description="我们盼望不只是聚集活动参与者，而是建立一个能持续影响城市与国家的青年属灵网络，并以稳定节奏推进长期同行。"
             />
 
             <div className="grid gap-6 md:grid-cols-2">
@@ -280,6 +280,52 @@ export default function Home() {
                 title="使命 Mission"
                 description="透过营会、线上聚会与持续陪伴，连结并装备欧洲青年，使他们在信仰、生活与领导力上持续成长，彼此支持，同奔使命。"
               />
+            </div>
+
+            <div className="mt-10 space-y-6" id="goals">
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.26em] text-amber-700">
+                  目标与策略
+                </p>
+                <h3 className="mt-3 font-display text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+                  以清晰目标推进，以稳定节奏成长
+                </h3>
+                <p className="mt-4 text-base leading-8 text-[color:var(--text-soft)] sm:text-lg">
+                  我们期待建立跨国青年门徒网络，同时坚持稳健发展，不牺牲关系质量与属灵深度。
+                </p>
+              </div>
+
+              <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+                <div className="space-y-5">
+                  <h3 className="font-display text-2xl font-semibold text-slate-950">目标 Goal</h3>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {goals.map((goal) => (
+                      <div className="stat-card" key={goal.label}>
+                        <p className="text-3xl font-semibold text-orange-600">{goal.value}</p>
+                        <p className="mt-2 text-lg font-semibold text-slate-900">{goal.label}</p>
+                        <p className="mt-2 text-sm leading-6 text-slate-600">{goal.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="section-card space-y-5">
+                  <h3 className="font-display text-2xl font-semibold text-slate-950">策略 Strategy</h3>
+                  <div className="space-y-4">
+                    {strategies.map((strategy) => (
+                      <div
+                        className="flex gap-3 rounded-2xl border border-orange-100 bg-orange-50/60 p-4"
+                        key={strategy}
+                      >
+                        <div className="mt-1 rounded-full bg-orange-500/10 p-2 text-orange-600">
+                          <Target className="h-4 w-4" />
+                        </div>
+                        <p className="text-sm leading-7 text-slate-700 sm:text-base">{strategy}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
@@ -301,48 +347,6 @@ export default function Home() {
                   description={item.description}
                 />
               ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="py-12 sm:py-16" id="goals">
-          <Container>
-            <SectionHeading
-              eyebrow="目标与策略"
-              title="以清晰目标推进，以稳定节奏成长"
-              description="我们期待建立跨国青年门徒网络，同时坚持稳健发展，不牺牲关系质量与属灵深度。"
-            />
-
-            <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-              <div className="space-y-5">
-                <h3 className="font-display text-2xl font-semibold text-slate-950">目标 Goal</h3>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {goals.map((goal) => (
-                    <div className="stat-card" key={goal.label}>
-                      <p className="text-3xl font-semibold text-orange-600">{goal.value}</p>
-                      <p className="mt-2 text-lg font-semibold text-slate-900">{goal.label}</p>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">{goal.detail}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="section-card space-y-5">
-                <h3 className="font-display text-2xl font-semibold text-slate-950">策略 Strategy</h3>
-                <div className="space-y-4">
-                  {strategies.map((strategy) => (
-                    <div
-                      className="flex gap-3 rounded-2xl border border-orange-100 bg-orange-50/60 p-4"
-                      key={strategy}
-                    >
-                      <div className="mt-1 rounded-full bg-orange-500/10 p-2 text-orange-600">
-                        <Target className="h-4 w-4" />
-                      </div>
-                      <p className="text-sm leading-7 text-slate-700 sm:text-base">{strategy}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </Container>
         </section>
