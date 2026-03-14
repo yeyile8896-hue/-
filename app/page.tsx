@@ -283,9 +283,6 @@ export default function Home() {
 
             <div className="mt-10 space-y-6" id="goals">
               <div className="max-w-3xl">
-                <p className="text-sm font-semibold uppercase tracking-[0.26em] text-amber-700">
-                  目标与策略
-                </p>
                 <h3 className="mt-3 font-display text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
                   以清晰目标推进，以稳定节奏成长
                 </h3>
