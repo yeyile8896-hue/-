@@ -24,9 +24,8 @@ import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/site";
 const navItems: NavItem[] = [
   { label: "关于", href: "#about" },
   { label: "名称由来", href: "#origin" },
-  { label: "异象使命", href: "#vision" },
+  { label: "异象使命目标策略", href: "#vision" },
   { label: "我们在做什么", href: "#what-we-do" },
-  { label: "目标策略", href: "#goals" },
   { label: "参与方式", href: "#join" },
   { label: "联系", href: "#contact" }
 ];
